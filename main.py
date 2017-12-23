@@ -43,7 +43,7 @@ def main(_):
     tl.files.exists_or_mkdir(FLAGS.sample_dir)
 
     z_dim = 100
-    with tf.device("/gpu:0"):
+    with tf.device("/gpu:0"): #gpu option
         ##========================= DEFINE MODEL ===========================##
         z = tf.placeholder(tf.float32, [FLAGS.batch_size, z_dim], name='z_noise')
         real_images =  tf.placeholder(tf.float32, [FLAGS.batch_size, FLAGS.output_size, FLAGS.output_size, FLAGS.c_dim], name='real_images')
